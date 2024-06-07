@@ -12,19 +12,21 @@
       </div>
     </div>
     <div class="row">
-      <ul
-        class="project__list"
-        id="ul-projects-container-ajax"
-        data-masonry='{ "itemSelector": ".project", "columnWidth": 200 }'
-      >
-        {{#each this.allProjects as |project|}}
-          <Sections::Projects::Project @project={{project}} />
-        {{else}}
-          <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
+      {{#if this.projects}}
+        <ul
+          class="project__list"
+          id="ul-projects-container-ajax"
+          data-masonry='{ "itemSelector": ".project", "columnWidth": 200 }'
+        >
+          {{#each this.projects as |project|}}
+            <Sections::Projects::ProjectCard @project={{project}} />
+          {{/each}}
+        </ul>
+      {{else}}
+        {{#each (array 1 2) as |index|}}
+          <Sections::Projects::LoadingCard key={{index}} />
         {{/each}}
-      </ul>
+      {{/if}}
     </div>
   </div>
 </section>

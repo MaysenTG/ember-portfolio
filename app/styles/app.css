@@ -348,14 +348,14 @@ button {
 @media only screen and (max-width: 790px) {
   .hero-section-contents {
     margin: 0 10px;
+  }
 
-    & > h1 {
-      font-size: 55px;
-    }
+  .hero-section-contents > h1 {
+    font-size: 55px;
+  }
 
-    & > p {
-      font-size: 25px;
-    }
+  .hero-section-contents > p {
+    font-size: 25px;
   }
 }
 

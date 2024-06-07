@@ -14,6 +14,12 @@ module.exports = function (environment) {
       },
     },
 
+    emailJS: {
+      service_id: 'service_wjf5wfb',
+      template_id: 'template_olzhave',
+      user_id: 'TiRBbXDxSv2TWXsYW',
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

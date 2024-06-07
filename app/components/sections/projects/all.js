@@ -3,10 +3,20 @@ import { tracked } from '@glimmer/tracking'
 import { projects } from 'personal-portfolio/utils/projects'
 
 export default class ProjectsAllComponent extends Component {
-  @tracked sending = false
+  @tracked loadingProjects = true
+  @tracked projects
 
-  get allProjects() {
-    return null
-    return projects
+  constructor() {
+    super(...arguments)
+
+    setTimeout(() => {
+      this.loadingProjects = false
+    }, 1000)
+
+    this.getProjects()
+  }
+
+  getProjects() {
+    this.projects = projects
   }
 }

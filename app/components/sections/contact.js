@@ -2,6 +2,7 @@ import Component from '@glimmer/component'
 import { action, computed, setProperties } from '@ember/object'
 import { tracked } from '@glimmer/tracking'
 import { inject as service } from '@ember/service'
+import environment from 'personal-portfolio/config/environment'
 
 export default class ContactComponent extends Component {
   @service swal
@@ -23,24 +24,13 @@ export default class ContactComponent extends Component {
 
     this.sending = true
 
-    const data = {
-      service_id: 'service_wjf5wfb',
-      template_id: 'template_olzhave',
-      user_id: 'TiRBbXDxSv2TWXsYW',
-      template_params: {
-        name: this.name,
-        email: this.email,
-        message: this.message,
-      },
-    }
-
     try {
       await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(this.emailBody()),
       })
 
       this.sending = false
@@ -51,7 +41,7 @@ export default class ContactComponent extends Component {
         icon: 'success',
         button: 'Close',
       })
-    } catch {
+    } catch (error) {
       this.swal.fire({
         title: 'Error!',
         text: 'An error occurred while submitting the form. Please try again later.',
@@ -65,5 +55,20 @@ export default class ContactComponent extends Component {
       name: '',
       message: '',
     })
+  }
+
+  emailBody() {
+    const { service_id, template_id, user_id } = environment.emailJS
+
+    return {
+      service_id,
+      template_id,
+      user_id,
+      template_params: {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+      },
+    }
   }
 }
