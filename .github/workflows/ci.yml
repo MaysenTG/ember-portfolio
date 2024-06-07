@@ -65,12 +65,3 @@ jobs:
   #       run: yarn install --frozen-lockfile
   #     - name: Run Tests
   #       run: yarn test
-
-
-name: GitHub Pages
-
-on:
-  push:
-    branches:
-      - main  # Set a branch name to trigger deployment
-  pull_request:
