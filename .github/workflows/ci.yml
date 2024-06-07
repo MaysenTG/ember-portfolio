@@ -36,7 +36,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
-        run: ember build
+        run: ember build --environment=production
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
