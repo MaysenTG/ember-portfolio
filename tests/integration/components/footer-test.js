@@ -7,20 +7,9 @@ module('Integration | Component | footer', function (hooks) {
   setupRenderingTest(hooks)
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value')
-    // Handle any actions with this.set('myAction', function(val) { ... })
-
     await render(hbs`<Footer />`)
 
-    assert.dom().hasText('')
-
-    // Template block usage:
-    await render(hbs`
-      <Footer>
-        template block text
-      </Footer>
-    `)
-
-    assert.dom().hasText('template block text')
+    assert.dom('[data-test-label="home-link"]').exists()
+    assert.dom('[data-test-label="home-link"]').hasText('Maysen Greenwood')
   })
 })
