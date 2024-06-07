@@ -1,5 +1,5 @@
 import Component from '@glimmer/component'
-import { action, computed, setProperties } from '@ember/object'
+import { action, setProperties } from '@ember/object'
 import { tracked } from '@glimmer/tracking'
 import { inject as service } from '@ember/service'
 import environment from 'personal-portfolio/config/environment'
@@ -7,15 +7,13 @@ import environment from 'personal-portfolio/config/environment'
 export default class ContactComponent extends Component {
   @service swal
   @tracked sending = false
+  @tracked email = ''
+  @tracked name = ''
+  @tracked message = ''
 
-  @computed('email', 'name', 'message')
   get isFormValid() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(this.email)) {
-      return false
-    }
-
-    return this.email && this.name && this.message
+    return emailRegex.test(this.email) && this.email && this.name && this.message
   }
 
   @action
