@@ -4,7 +4,7 @@ module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'personal-portfolio',
     environment,
-    rootURL: '/',
+    rootURL: 'https://maysentg.github.io/ember-portfolio/',
     locationType: 'history',
     EmberENV: {
       EXTEND_PROTOTYPES: false,
