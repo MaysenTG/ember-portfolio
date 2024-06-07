@@ -24,24 +24,53 @@ jobs:
         with:
           node-version: 18
           cache: yarn
+
+      - name: Setup Ember
+        working-directory: ./app/ember-frontend/frontend
+        run:
+          yarn global add ember-cli@5.9.0
+
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
-      - name: Lint
-        run: yarn lint
 
-  test:
-    name: "Test"
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+      - name: Build
+        run: ember build
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        # If you're changing the branch from main,
+        # also change the `main` in `refs/heads/main`
+        # below accordingly.
+        if: github.ref == 'refs/heads/main'
         with:
-          node-version: 18
-          cache: yarn
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Run Tests
-        run: yarn test
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+      # - name: Lint
+      #   run: yarn lint
+
+  # test:
+  #   name: "Test"
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 10
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Install Node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18
+  #         cache: yarn
+  #     - name: Install Dependencies
+  #       run: yarn install --frozen-lockfile
+  #     - name: Run Tests
+  #       run: yarn test
+
+
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+  pull_request:

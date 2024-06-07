@@ -1,0 +1,30 @@
+<section class="py-4 py-xl-5" id="projects">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="order-lg-2">
+        <div class="pt-5">
+          <h2 class="display-4">My projects</h2>
+          <p>I've built projects such as a fully functional ecommerce store, a fast URL shortener app, and a static site
+            generator using Google Cloud Storage to name a few. My key strengths are Ruby on Rails (and the MVC
+            architecture as a whole), relational and non-relational databases, Javascript, and tools like Redis.</p>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <ul
+        class="project__list"
+        id="ul-projects-container-ajax"
+        data-masonry='{ "itemSelector": ".project", "columnWidth": 200 }'
+      >
+        {{#each this.allProjects as |project|}}
+          <Sections::Projects::Project @project={{project}} />
+        {{else}}
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</section>
