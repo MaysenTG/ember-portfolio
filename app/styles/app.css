@@ -376,18 +376,18 @@ nav {
 #contact-me {
   height: 100%;
   background-color: #f5ffef;
+}
 
-  & > .container {
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
+#contact-me > .container {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #about {
   height: 100%;
   background-color: #f5ffef;
+}
 
-  & > .container {
-    margin-bottom: 5rem;
-  }
+#contact-me > .container {
+  margin-bottom: 5rem;
 }
