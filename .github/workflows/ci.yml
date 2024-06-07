@@ -26,7 +26,6 @@ jobs:
           cache: yarn
 
       - name: Setup Ember
-        working-directory: ./app/ember-frontend/frontend
         run:
           yarn global add ember-cli@5.9.0
 
