@@ -29,8 +29,8 @@ export default class ProjectsAllComponent extends Component {
   }
 
   async getProjects() {
-    const projects = await fetch(`${this.apiUrl}?select=*&order=position`, {
-      headers: this.apiHeaders,
+    const projects = await fetch(`${this.apiUrl()}?select=*&order=position`, {
+      headers: this.apiHeaders(),
     })
 
     const data = await projects.json()
