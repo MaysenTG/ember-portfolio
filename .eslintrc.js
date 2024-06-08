@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   root: true,
@@ -8,21 +8,15 @@ module.exports = {
     sourceType: 'module',
     requireConfigFile: false,
     babelOptions: {
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-      ],
+      plugins: [['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }]],
     },
   },
   plugins: ['ember'],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:ember/recommended', 'plugin:prettier/recommended'],
   env: {
     browser: true,
   },
-  rules: {},
+  rules: { 'ember/no-inline-styles': 'off', semi: ['error', 'never'] },
   overrides: [
     // node files
     {
@@ -53,4 +47,4 @@ module.exports = {
       extends: ['plugin:qunit/recommended'],
     },
   ],
-};
+}

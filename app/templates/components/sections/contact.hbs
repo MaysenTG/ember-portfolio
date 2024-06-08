@@ -1,0 +1,81 @@
+<section id="contact-me" class="position-relative py-4 py-xl-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-lg-1">
+        <div class="pt-5">
+          <h2 class="display-4">Get in touch</h2>
+          <p>Let me know that you'd like to work with me!</p>
+          <p>
+            <a href="mailto:greenwood.maysen@gmail.com">
+              greenwood.maysen@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 order-lg-2">
+        <div class="pt-5">
+          <div class="mb-5">
+            <div>
+              <form id="contact-form">
+                <div class="mb-3">
+                  <Input
+                    @type="text"
+                    @value={{this.name}}
+                    data-display-name="name"
+                    id="name-2"
+                    class="form-control"
+                    name="user_name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <Input
+                    @type="email"
+                    @value={{this.email}}
+                    data-display-name="email"
+                    id="email-2"
+                    class="form-control"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <Textarea
+                    @value={{this.message}}
+                    data-display-name="message"
+                    id="message-2"
+                    rows="6"
+                    class="form-control"
+                    name="message"
+                    placeholder="Message"
+                  />
+                </div>
+                <div>
+                  {{#if this.sending}}
+                    <button class="d-block w-100 btn btn-primary hidden" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Sending...
+                    </button>
+                  {{else}}
+                    <button
+                      disabled={{if this.isFormValid false true}}
+                      type="button"
+                      class="btn btn-primary d-block w-100"
+                      {{on "click" this.submitForm}}
+                    >
+                      {{#if this.isFormValid}}
+                        Send me a message!
+                      {{else}}
+                        Please fill out all fields
+                      {{/if}}
+                    </button>
+                  {{/if}}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
