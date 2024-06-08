@@ -47,7 +47,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/ember-portfolio/'
+    // Need this if deploying to the GH pages domain (maysentg.github.io/ember-portfolio/)
+    // ENV.rootURL = '/ember-portfolio/'
   }
 
   return ENV
