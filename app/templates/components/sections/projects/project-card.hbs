@@ -14,9 +14,11 @@
         >
           <img alt="github icon" src="/assets/images/github-logo-white.png" height="30px" width="30px" class="icon" />
         </a>
-        <a href={{this.project.live_url}} rel="noopener noreferrer" target="_blank" class="project__description--link">
-          <img alt="web preview icon" src="assets/images/earth-white.png" height="30px" width="30px" class="icon" />
-        </a>
+        {{#if this.project.live_url}}
+          <a href={{this.project.live_url}} rel="noopener noreferrer" target="_blank" class="project__description--link">
+            <img alt="web preview icon" src="assets/images/earth-white.png" height="30px" width="30px" class="icon" />
+          </a>
+        {{/if}}
       </div>
     </div>
   </div>
