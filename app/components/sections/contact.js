@@ -1,11 +1,10 @@
 import Component from '@glimmer/component'
 import { action, setProperties } from '@ember/object'
 import { tracked } from '@glimmer/tracking'
-import { inject as service } from '@ember/service'
 import environment from 'ember-portfolio/config/environment'
+import Swal from 'sweetalert2'
 
 export default class ContactComponent extends Component {
-  @service swal
   @tracked sending = false
   @tracked email = ''
   @tracked name = ''
@@ -31,16 +30,14 @@ export default class ContactComponent extends Component {
         body: JSON.stringify(this.emailBody()),
       })
 
-      this.sending = false
-
-      this.swal.fire({
+      Swal.fire({
         title: 'Form submitted!',
         text: 'Thank you for reaching out. I will get back to you as soon as possible.',
         icon: 'success',
         button: 'Close',
       })
     } catch (error) {
-      this.swal.fire({
+      Swal.fire({
         title: 'Error!',
         text: 'An error occurred while submitting the form. Please try again later.',
         icon: 'error',
@@ -52,6 +49,7 @@ export default class ContactComponent extends Component {
       email: '',
       name: '',
       message: '',
+      sending: false,
     })
   }
 
