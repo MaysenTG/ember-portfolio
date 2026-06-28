@@ -1,35 +1,29 @@
-{{! template-lint-disable no-inline-styles }}
-
-<section class="blank hero" style="margin-top: 5%; margin-bottom: 10%; height: 100%;">
-  <div class="container">
-    <div
-      class="border rounded border-0 d-flex flex-column align-items-center"
-      style="width: 100%; margin-top: 5rem; margin-bottom: 5rem;"
-    >
-      <div
-        style="width: 100%;"
-        class="col-12 text-center d-flex d-sm-flex d-md-flex align-items-center mx-auto align-items-md-center"
+<section class="hero">
+  <div class="container hero__content">
+    <p class="hero__greeting">Hey, I'm Maysen</p>
+    <h1 class="hero__title">
+      Fullstack<br />
+      <span>Developer</span>
+    </h1>
+    <p class="hero__tagline">
+      I craft code, build seamless user experiences, and turn ideas into polished
+      <strong>fullstack solutions</strong>.
+    </p>
+    <div class="hero__actions">
+      <button
+        class="btn btn-primary"
+        onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });"
+        type="button"
       >
-        <div class="hero-section-contents" style="width: 100vw; margin-top: 3rem;">
-          <p class="mb-4">Hey! <br /> I'm Maysen and I'm a <br /></p>
-          <h1 class="text-uppercase fw-bold mb-3">
-            <strong>Fullstack
-              <br />
-              developer
-            </strong>
-          </h1>
-          <p class="mb-4 hero-subtext">
-            but I also like to craft code, create seamless user experiences, and turn ideas into polished <span class="fw-bold">fullstack solutions</span>
-          </p>
-          <button
-            class="btn btn-light fs-5 py-2 px-4 coolMainButton"
-            onclick="document.getElementById('projects').scrollIntoView();"
-            type="button"
-          >
-            Check out some of my projects
-          </button>
-        </div>
-      </div>
+        View my projects
+      </button>
+      <button
+        class="btn btn-outline-light"
+        onclick="document.getElementById('contact-me').scrollIntoView({ behavior: 'smooth' });"
+        type="button"
+      >
+        Get in touch
+      </button>
     </div>
   </div>
 </section>
