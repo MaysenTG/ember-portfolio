@@ -295,7 +295,7 @@ button {
 
 .coolMainButton:hover {
   border: 2px solid transparent;
-  color: #f4f6fc;
+  color: #f4f6fc !important;
   transform: scale(1.05);
 }
 
