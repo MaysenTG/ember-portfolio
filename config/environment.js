@@ -17,11 +17,6 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      apiUrl: 'https://yqqoycjyqdbdvtqkwgdx.supabase.co/rest/v1/projects',
-      apiKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcW95Y2p5cWRiZHZ0cWt3Z2R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTM3NDMwMzUsImV4cCI6MjAyOTMxOTAzNX0.2T6wC80P7p5fzSvdIKTuyW5uVqmLX6dyv0ugPUBQO9E',
-      apiAuthToken:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxcW95Y2p5cWRiZHZ0cWt3Z2R4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTM3NDMwMzUsImV4cCI6MjAyOTMxOTAzNX0.2T6wC80P7p5fzSvdIKTuyW5uVqmLX6dyv0ugPUBQO9E',
     },
   }
 
