@@ -47,7 +47,7 @@ export const projects = [
   {
     title: 'Fake API',
     description:
-      'Fake API built with Sinatra (Ruby). It uses the Sinatra framework to create a fake API for testing purposes.',
+      'Fake API built with Sinatra (Ruby). It uses the Sinatra framework to create a fake API for testing purposes. It uses the OpenAI API to generate and cache API responses, allowing limitless API endpoints.',
     live_url: '',
     github_repo: 'https://github.com/MaysenTG/fake-api',
     image_url: '/assets/images/fake-api.png',

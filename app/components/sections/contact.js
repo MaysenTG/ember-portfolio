@@ -1,8 +1,8 @@
 import Component from '@glimmer/component'
 import { action, setProperties } from '@ember/object'
 import { tracked } from '@glimmer/tracking'
-import environment from 'ember-portfolio/config/environment'
 import Swal from 'sweetalert2'
+import ENV from 'ember-portfolio/config/environment'
 
 export default class ContactComponent extends Component {
   @tracked sending = false
@@ -34,14 +34,14 @@ export default class ContactComponent extends Component {
         title: 'Form submitted!',
         text: 'Thank you for reaching out. I will get back to you as soon as possible.',
         icon: 'success',
-        button: 'Close',
       })
     } catch (error) {
+      console.log(error)
+
       Swal.fire({
         title: 'Error!',
         text: 'An error occurred while submitting the form. Please try again later.',
         icon: 'error',
-        button: 'Close',
       })
     }
 
@@ -54,7 +54,7 @@ export default class ContactComponent extends Component {
   }
 
   emailBody() {
-    const { service_id, template_id, user_id } = environment.emailJS
+    const { service_id, template_id, user_id } = ENV.EMAIL_JS
 
     return {
       service_id,
