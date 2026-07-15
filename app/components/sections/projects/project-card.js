@@ -7,6 +7,6 @@ export default class ProjectComponent extends Component {
 
   skillsList(skillsString) {
     if (!skillsString) return []
-    return skillsString.split(',').map(skill => skill.trim())
+    return skillsString.split(',').map((skill) => skill.trim())
   }
 }

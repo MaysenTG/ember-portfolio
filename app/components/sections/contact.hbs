@@ -21,7 +21,8 @@
                 @type="text"
                 @value={{this.name}}
                 data-display-name="name"
-                id="name-2"
+                data-test-input="name"
+                id="name"
                 class="form-control"
                 name="user_name"
                 placeholder="Your name"
@@ -32,7 +33,8 @@
                 @type="email"
                 @value={{this.email}}
                 data-display-name="email"
-                id="email-2"
+                data-test-input="email"
+                id="email"
                 class="form-control"
                 name="email"
                 placeholder="Your email"
@@ -42,7 +44,8 @@
               <Textarea
                 @value={{this.message}}
                 data-display-name="message"
-                id="message-2"
+                data-test-input="message"
+                id="message"
                 rows="5"
                 class="form-control"
                 name="message"
@@ -60,6 +63,7 @@
                   disabled={{if this.isFormValid false true}}
                   type="button"
                   class="btn btn-primary d-block w-100"
+                  data-test-action="submit-form"
                   {{on "click" this.submitForm}}
                 >
                   {{#if this.isFormValid}}
