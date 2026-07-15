@@ -1,25 +1,34 @@
 <li class="project">
-  <div class="project__wrapper">
-    <img src={{this.project.image_url}} class="project__img" alt={{this.project.title}} />
-    <div class="project__description">
-      <h3 class="project__description--title">{{this.project.title}}</h3>
-      <h4 class="project__description--sub-title">{{this.project.skills}}</h4>
-      <p class="project__description--para">{{this.project.description}}</p>
-      <div class="project__description--links">
+  <article class="project__card">
+    <div class="project__image-wrapper">
+      <img src={{this.project.image_url}} class="project__img" alt={{this.project.title}} />
+    </div>
+    <div class="project__content">
+      <div class="project__content-main">
+        <h3 class="project__title">{{this.project.title}}</h3>
+        <div class="project__skills-list">
+          {{#each (this.skillsList this.project.skills) as |skill|}}
+            <span class="project__skill-tag">{{skill}}</span>
+          {{/each}}
+        </div>
+        <p class="project__description">{{this.project.description}}</p>
+      </div>
+      <div class="project__links">
         <a
           href={{this.project.github_repo}}
           rel="noopener noreferrer"
           target="_blank"
-          class="project__description--link"
+          class="project__link"
+          title="View on GitHub"
         >
-          <img alt="github icon" src="/assets/images/github-logo-white.png" height="30px" width="30px" class="icon" />
+          <img alt="github icon" src="/assets/images/github-logo-white.png" height="24px" width="24px" class="icon" />
         </a>
         {{#if this.project.live_url}}
-          <a href={{this.project.live_url}} rel="noopener noreferrer" target="_blank" class="project__description--link">
-            <img alt="web preview icon" src="assets/images/earth-white.png" height="30px" width="30px" class="icon" />
+          <a href={{this.project.live_url}} rel="noopener noreferrer" target="_blank" class="project__link" title="View live">
+            <img alt="web preview icon" src="assets/images/earth-white.png" height="24px" width="24px" class="icon" />
           </a>
         {{/if}}
       </div>
     </div>
-  </div>
+  </article>
 </li>
