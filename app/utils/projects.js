@@ -32,8 +32,8 @@ export const projects = [
       'Link in bio app with an editable bio page. The app uses Hotwire/StimulusJS to update the bio page in real time. Links are orderable to prioritize the most important links.',
     live_url: '',
     github_repo: 'https://github.com/MaysenTG/RoR-link_in_bio',
-    image_url: '/assets/images/linkinbio.webp',
-    skills: 'Ruby on Rails, Hotwire/StimulusJS, Google Cloud Storage',
+    image_url: '/assets/images/linkinbio.png',
+    skills: 'Ruby on Rails, Hotwire/StimulusJS, Cloudflare R2 asset storage',
   },
   {
     title: 'EmberJS portfolio site',
@@ -51,6 +51,6 @@ export const projects = [
     live_url: '',
     github_repo: 'https://github.com/MaysenTG/fake-api',
     image_url: '/assets/images/fake-api.png',
-    skills: 'Sinatra (Ruby), RESTful APIs, JSON formatted responses from OpenAI',
+    skills: 'Sinatra (Ruby), RESTful APIs, JSON formatted responses from OpenAI, agressive caching',
   },
 ]
