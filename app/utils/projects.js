@@ -30,7 +30,7 @@ export const projects = [
     title: 'Link in bio',
     description:
       'Link in bio app with an editable bio page. The app uses Hotwire/StimulusJS to update the bio page in real time. Links are orderable to prioritize the most important links.',
-    live_url: '',
+    live_url: 'https://linkinbio.fly.dev/',
     github_repo: 'https://github.com/MaysenTG/RoR-link_in_bio',
     image_url: '/assets/images/linkinbio.png',
     skills: 'Ruby on Rails, Hotwire/StimulusJS, Cloudflare R2 asset storage',
